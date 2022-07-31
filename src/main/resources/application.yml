@@ -9,3 +9,13 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 946405477037-9009cpkv5dq6c4kvm5h9ka4vsssr5og1.apps.googleusercontent.com
+            clientSecret: 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
+            scope:
+              - email
+              - profile

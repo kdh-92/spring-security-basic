@@ -1,6 +1,8 @@
 package com.codestates.security.model;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Member {
 
     @Id
@@ -20,4 +23,16 @@ public class Member {
     private String email;
     private String role;
     private LocalDateTime createdAt = LocalDateTime.now();
+
+    private String provider;
+    private String providerId;
+
+    @Builder
+    public Member(String username, String email, String role, String provider, String providerId) {
+        this.username = username;
+        this.email = email;
+        this.role = role;
+        this.provider = provider;
+        this.providerId = providerId;
+    }
 }
